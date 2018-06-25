@@ -23,7 +23,7 @@ export default function (state = initialState, { type ,payload }) {
         ]
 
       case DELETE_DATA:
-        return state
+      return state.filter(function(event) { return event.id !== payload; });
 
       default:
         return state;

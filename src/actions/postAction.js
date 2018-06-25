@@ -25,10 +25,9 @@ export const removeData = (postData) => dispatch => {
   console.log(postData);
     const URL = "http://localhost:3004/users/"+postData;
     axios.delete(URL)
-      .then( res => { return res.data } )
       .then( data => dispatch({
             type: DELETE_DATA,
-            payload: data
+            payload: postData
       })
     );
 }
