@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Sawyere",
+      "middleName": "Thripp",
+      "lastName": "Pull",
+      "age": "30",
+      "email": "spull0@moonfruit.com"
+    },
+    {
+      "id": "2",
+      "firstName": "Karlyn",
+      "middleName": "Plows",
+      "lastName": "Antliff",
+      "age": "25",
+      "email": "kantliff1@lycos.com"
+    },
+    {
+      "id": "3",
+      "firstName": "Hadleigh",
+      "middleName": "McCoish",
+      "lastName": "Frift",
+      "age": "32",
+      "email": "hfrift2@amazon.co.jp"
+    },
+    {
+      "id": "4",
+      "firstName": "Toby",
+      "middleName": "Dykins",
+      "lastName": "MacDowall",
+      "age": "40",
+      "email": "tmacdowall3@parallels.com"
+    },
+    {
+      "id": "5",
+      "firstName": "Herbie",
+      "middleName": "Revely",
+      "lastName": "Patinkin",
+      "age": "28",
+      "email": "hpatinkin4@house.gov"
+    },
+    {
+      "id": "6",
+      "firstName": "elmo",
+      "middleName": "s",
+      "lastName": "langcap",
+      "age": "22",
+      "email": "elmolangcap@gmail.com"
+    }
+  ]
+}
