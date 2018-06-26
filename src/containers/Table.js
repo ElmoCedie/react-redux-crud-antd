@@ -1,5 +1,6 @@
 import React from  'react';
 import PropsTypes from 'prop-types';
+import UpdateModal from './updateModal';
 import { Table, Button } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -18,7 +19,6 @@ class TableList extends React.Component {
   }
 
   render(){
-    console.log(this.props.table);
     const dataItems = this.props.table.map( res => { return {
          key: res.id,
          id: res.id,
@@ -26,7 +26,7 @@ class TableList extends React.Component {
          mname: res.middleName,
          lname: res.lastName,
          age: res.age,
-         address: res.email
+         email: res.email
       };
     });
 
@@ -53,15 +53,15 @@ class TableList extends React.Component {
       dataIndex: 'age',
       key: 'age',
     }, {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
     },
     , {
-      title: 'Edit',
-      key: 'edit',
+      title: 'Update',
+      key: 'update',
       render: (data) => (
-          <Button type="primary"  ghost >EDIT</Button>
+        <UpdateModal  dataProps={data}/>
       ),
     }, {
       title: 'Delete',
@@ -74,7 +74,7 @@ class TableList extends React.Component {
   ];
 
     return (
-      <Table dataSource={dataItems} columns={columns} />
+      <Table dataSource={dataItems} columns={columns} pagination={false}/>
     );
   }
 

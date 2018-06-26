@@ -1,8 +1,7 @@
-import { FETCH_DATA, NEW_DATA, DELETE_DATA } from './index';
+import { FETCH_DATA, NEW_DATA, DELETE_DATA, UPDATE_DATA } from './index';
 import axios from 'axios';
 
 export const fetchData = (data) => dispatch => {
-  // console.log(data);
     dispatch({
         type: FETCH_DATA,
         payload: data
@@ -21,8 +20,20 @@ export const createData = (postData) => dispatch => {
     );
 }
 
+export const updateData = (postData) => dispatch => {
+  const URL = "http://localhost:3004/users/"+postData.id;
+    axios.put( URL , {
+      ...postData
+    })
+      .then( res => { return res.data })
+      .then( data => dispatch({
+            type: UPDATE_DATA,
+            payload: data
+      })
+    );
+}
+
 export const removeData = (postData) => dispatch => {
-  console.log(postData);
     const URL = "http://localhost:3004/users/"+postData;
     axios.delete(URL)
       .then( data => dispatch({
