@@ -65,7 +65,7 @@ class AddModal extends React.Component{
     return(
       <div>
         <div>
-          <Button type="primary" onClick={this.showModal}>ADD</Button>
+          <Button type="primary" size="large" shape="circle" icon="plus" onClick={this.showModal} ghost></Button>
         </div>
 
         <Form >

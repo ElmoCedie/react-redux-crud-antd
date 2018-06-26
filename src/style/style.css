@@ -7,3 +7,11 @@
   align-items: center;
   display: flex;
 }
+
+#top-container {
+  margin: 0 20px 0;
+}
+
+#table-container {
+  margin-top: 10px;
+}

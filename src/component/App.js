@@ -8,11 +8,14 @@ class App extends React.Component {
     return(
       <div>
           <div id="header"><h1> React Redux Crud Ant Design </h1></div>
-          <div>
+
+          <div id="top-container">
             <AddModal />
           </div>
-          <TableList />
 
+          <div id="table-container">
+            <TableList />
+          </div>
       </div>
     );
   }

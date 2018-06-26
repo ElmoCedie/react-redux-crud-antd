@@ -1,16 +1,16 @@
 import { FETCH_DATA, NEW_DATA, DELETE_DATA, UPDATE_DATA } from './index';
 import axios from 'axios';
 
-export const fetchData = (data) => dispatch => {
+export const fetchData = (state) => dispatch => {
     dispatch({
         type: FETCH_DATA,
-        payload: data
+        payload: state
       });
 }
 
-export const createData = (postData) => dispatch => {
+export const createData = (state) => dispatch => {
     axios.post('http://localhost:3004/users',{
-      ...postData
+      ...state
     })
       .then( res => { return res.data })
       .then( data => dispatch({
@@ -20,10 +20,10 @@ export const createData = (postData) => dispatch => {
     );
 }
 
-export const updateData = (postData) => dispatch => {
-  const URL = "http://localhost:3004/users/"+postData.id;
+export const updateData = (state) => dispatch => {
+  const URL = "http://localhost:3004/users/"+state.id;
     axios.put( URL , {
-      ...postData
+      ...state
     })
       .then( res => { return res.data })
       .then( data => dispatch({
@@ -33,12 +33,12 @@ export const updateData = (postData) => dispatch => {
     );
 }
 
-export const removeData = (postData) => dispatch => {
-    const URL = "http://localhost:3004/users/"+postData;
+export const removeData = (state) => dispatch => {
+    const URL = "http://localhost:3004/users/"+state;
     axios.delete(URL)
       .then( data => dispatch({
             type: DELETE_DATA,
-            payload: postData
+            payload: state
       })
     );
 }
